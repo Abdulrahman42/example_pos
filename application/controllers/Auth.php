@@ -16,11 +16,11 @@ class Auth extends CI_Controller
             $query = $this->user_m->login($post);
             if ($query->num_rows() > 0) {
                 $row = $query->row();
-                $params = array(
+                $data = [
                     'userid' => $row->user_id,
                     'level' => $row->level
-                );
-                $this->session->set_userdata($params);
+                ];
+                $this->session->set_userdata($data);
                 echo "<script>
                     alert('selamat, login behasil');
                     window.location='" . base_url('dashboard') . "'; 
@@ -32,5 +32,11 @@ class Auth extends CI_Controller
                </script>";
             }
         }
+    }
+    public function logout()
+    {
+        $data = ['userid', 'leve;'];
+        $this->session->unset_userdata($data);
+        redirect('auth');
     }
 }
