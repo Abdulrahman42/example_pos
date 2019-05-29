@@ -12,4 +12,26 @@ class User_m extends CI_Model
         $query = $this->db->get();
         return $query;
     }
+    public function get($id = null)
+    {
+        $this->db->from('user');
+        if ($id != null) {
+            $this->db->where('user_id', $id);
+        }
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function add($post)
+    {
+        $data = [
+            'name' => $this->input->post('fullname'),
+            'username' => $this->input->post('username'),
+            'password' => sha1($post['password']),
+            'address' => $this->input->post('address'),
+            'level' => $this->input->post('level')
+
+        ];
+        $this->db->insert('user', $data);
+    }
 }
