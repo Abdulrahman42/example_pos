@@ -44,12 +44,14 @@
                                     <td><?= $data->address ?></td>
                                     <td><?= $data->level == 1 ? "Admin" : "Kasir" ?></td>
                                     <td class="text-center" width="160px">
-                                        <a href="<?= base_url('user/add'); ?>" class="badge badge-primary">
-                                            <i class="mdi mdi-pencil"></i><span class="menu-title">Edit</span>
-                                        </a>
-                                        <a href="<?= base_url('user/add'); ?>" class="badge badge-danger">
-                                            <i class="mdi mdi-bitbucket"></i> <span class="menu-title">Delete</span>
-                                        </a>
+                                        <form action="<?= base_url('user/del'); ?>" method="post">
+                                            <a href="<?= base_url('user/add'); ?>" class="badge badge-primary">
+                                                <i class="mdi mdi-pencil"></i><span class="menu-title">Edit</span>
+                                            </a>
+                                            <input type="hidden" name="user_id" value="<?= $data->user_id ?>">
+                                            <button onclick="return confirm('apakah anda yakin?')" class="badge badge-danger">
+                                                <i class="mdi mdi-bitbucket"></i> <span class="menu-title">Delete</span>
+                                            </button></form>
                                     </td>
                                 </tr>
                                 <?php $i++; ?>

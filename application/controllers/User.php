@@ -41,4 +41,11 @@ class User extends CI_Controller
             redirect('user');
         }
     }
+    public function del()
+    {
+        $id = $this->input->post('user_id');
+        $this->user_m->del($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User berhasil dihapus!</div>');
+        redirect('user');
+    }
 }

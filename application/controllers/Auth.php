@@ -22,15 +22,10 @@ class Auth extends CI_Controller
                     'level' => $row->level
                 ];
                 $this->session->set_userdata($data);
-                echo "<script>
-                    alert('selamat, login behasil');
-                    window.location='" . base_url('dashboard') . "'; 
-                   </script>";
+                redirect('dashboard');
             } else {
-                echo "<script>
-                alert('login gagal');
-                window.location='" . base_url('auth') . "'; 
-               </script>";
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong username or password!</div>');
+                redirect('auth');
             }
         }
     }
