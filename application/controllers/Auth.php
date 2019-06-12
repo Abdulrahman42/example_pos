@@ -29,10 +29,15 @@ class Auth extends CI_Controller
             }
         }
     }
+    // untuk keluar
     public function logout()
     {
         $data = ['userid', 'leve;'];
         $this->session->unset_userdata($data);
         redirect('auth');
+    }
+    public function blocked()
+    {
+        $this->load->view('blocked');
     }
 }

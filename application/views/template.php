@@ -132,7 +132,7 @@
                             </ul>
                         </div>
                     </li>
-                    <?php if ($this->session->userdata('level') == 1) { ?>
+                    <?php if ($this->fungsi->user_login()->level == 1) { ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('user'); ?>">
                                 <i class="mdi mdi-account menu-icon"></i>

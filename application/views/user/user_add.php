@@ -48,8 +48,8 @@
                     <label>Level</label>
                     <select name="level" class="form-control">
                         <option value="">Pilih</option>
-                        <option value=" 1">Admin</option>
-                        <option value="2">Kasir</option>
+                        <option value="1" <?= set_value('level') == 1 ? "selected" : null ?>>Admin</option>
+                        <option value="2" <?= set_value('level') == 2 ? "selected" : null ?>>Kasir</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary mr-2"><i class="mdi mdi-content-save menu-icon"></i> <span class="menu-title">Save</span> </button>

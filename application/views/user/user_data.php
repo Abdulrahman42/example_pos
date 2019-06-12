@@ -45,7 +45,7 @@
                                     <td><?= $data->level == 1 ? "Admin" : "Kasir" ?></td>
                                     <td class="text-center" width="160px">
                                         <form action="<?= base_url('user/del'); ?>" method="post">
-                                            <a href="<?= base_url('user/add'); ?>" class="badge badge-primary">
+                                            <a href="<?= base_url('user/edit/' . $data->user_id); ?>" class="badge badge-primary">
                                                 <i class="mdi mdi-pencil"></i><span class="menu-title">Edit</span>
                                             </a>
                                             <input type="hidden" name="user_id" value="<?= $data->user_id ?>">
