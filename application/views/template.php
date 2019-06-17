@@ -99,9 +99,9 @@
                         </a>
                         <div class="collapse" id="product">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Category</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Unit</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Item</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url('categorys') ?>">Category</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url('units'); ?>">Unit</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url('items'); ?>">Item</a></li>
                             </ul>
                         </div>
                     </li>
