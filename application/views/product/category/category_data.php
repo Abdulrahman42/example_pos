@@ -30,8 +30,8 @@
                         <i class="mdi mdi-account-plus "></i> <span class="menu-title">Create</span>
                     </a>
                 </div>
-                <div class="table-responsive">
-                    <table id="recent-purchases-listing" class="table ">
+                <div class="table-responsive pt-3">
+                    <table class="table table-bordered" id="datatab">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -43,7 +43,7 @@
                             <?php $i = 1; ?>
                             <?php foreach ($row->result() as $key => $data) { ?>
                                 <tr>
-                                    <td><?= $i; ?></td>
+                                    <td width="60px"><?= $i; ?></td>
                                     <td><?= $data->name ?></td>
                                     <td class="text-center" width="260px">
                                         <a href="<?= base_url('categorys/edit/' . $data->category_id); ?>" class="badge badge-primary">

@@ -22,8 +22,8 @@
                         <i class="mdi mdi-account-plus "></i> <span class="menu-title">Create</span>
                     </a>
                 </div>
-                <div class="table-responsive">
-                    <table id="recent-purchases-listing" class="table ">
+                <div class="table-responsive pt-3">
+                    <table class="table table-bordered" id="datatab">
                         <thead>
                             <tr>
                                 <th>#</th>
