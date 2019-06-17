@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/forms/basic_elements.html">
+                        <a class="nav-link" href="<?= base_url('suppliers'); ?>">
                             <i class="mdi mdi-truck menu-icon"></i>
                             <span class="menu-title">Suppliers</span>
                         </a>
@@ -151,7 +151,7 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2019 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
                     </div>
                 </footer>
@@ -181,6 +181,10 @@
     <script src="<?= base_url('assets/'); ?>js/data-table.js"></script>
     <script src="<?= base_url('assets/'); ?>js/jquery.dataTables.js"></script>
     <script src="<?= base_url('assets/'); ?>js/dataTables.bootstrap4.js"></script>
+
+
+
+
     <!-- End custom js for this page-->
 </body>
 

@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="table-responsive">
-                    <table id="recent-purchases-listing" class="table">
+                    <table id="recent-purchases-listing" class="table ">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -46,7 +46,7 @@
                                     <td class="text-center" width="160px">
                                         <form action="<?= base_url('user/del'); ?>" method="post">
                                             <a href="<?= base_url('user/edit/' . $data->user_id); ?>" class="badge badge-primary">
-                                                <i class="mdi mdi-pencil"></i><span class="menu-title">Edit</span>
+                                                <i class="mdi mdi-pencil"></i><span class="menu-title">Update</span>
                                             </a>
                                             <input type="hidden" name="user_id" value="<?= $data->user_id ?>">
                                             <button onclick="return confirm('apakah anda yakin?')" class="badge badge-danger">
