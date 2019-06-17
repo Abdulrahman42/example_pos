@@ -86,7 +86,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/charts/chartjs.html">
+                        <a class="nav-link" href="<?= base_url('customers'); ?>">
                             <i class="mdi mdi-account-multiple menu-icon"></i>
                             <span class="menu-title">Customers</span>
                         </a>
