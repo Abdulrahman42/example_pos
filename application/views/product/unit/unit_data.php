@@ -1,21 +1,8 @@
 <section class="content-header">
 
-    <!-- <div class="row">
-        <div class="col-md-12 grid-margin">
-            <div class="d-flex justify-content-between flex-wrap">
-                <div class="d-flex align-items-end flex-wrap">
-    
-                    <div class="d-flex">
-                        <i class="mdi mdi-home text-muted hover-cursor"></i>
-                        <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;units&nbsp;&nbsp;</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <ol class="breadcrumb">
-        <li><a href=""> <i class="mdi mdi-home text-muted hover-cursor"></i> </a></li>
-        <li><a href=""> <i></i><span class="text-muted mb-0 hover-cursor"> / Units</span></a></li>
+        <li><a href="<?= base_url('dashboard'); ?>"> <i class="mdi mdi-home text-muted hover-cursor"></i> </a></li>
+        <li><a href=""> <i></i><span class="text-muted mb-0 hover-cursor"><b>/ units</b> </span></a></li>
     </ol>
 </section>
 </section class="content">
@@ -27,7 +14,7 @@
                 <?= $this->session->flashdata('message'); ?>
                 <div class="float-sm-right">
                     <a href="<?= base_url('units/add'); ?>" class="btn btn-primary btn-sm">
-                        <i class="mdi mdi-account-plus "></i> <span class="menu-title">Create</span>
+                        <i class="mdi mdi-plus  "></i> <span class="menu-title">Create</span>
                     </a>
                 </div>
                 <div class="table-responsive pt-3">

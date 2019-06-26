@@ -1,16 +1,10 @@
-<div class="row">
-    <div class="col-md-12 grid-margin">
-        <div class="d-flex justify-content-between flex-wrap">
-            <div class="d-flex align-items-end flex-wrap">
+<section class="content-header">
 
-                <div class="d-flex">
-                    <i class="mdi mdi-home text-muted hover-cursor"></i>
-                    <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;customers&nbsp;&nbsp;</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <ol class="breadcrumb">
+        <li><a href="<?= base_url('dashboard'); ?>"> <i class="mdi mdi-home text-muted hover-cursor"></i> </a></li>
+        <li><a href=""> <i></i><span class="text-muted mb-0 hover-cursor"><b>/ customers</b> </span></a></li>
+    </ol>
+</section>
 <div class="row">
     <div class="col-md-12 stretch-card">
         <div class="card">

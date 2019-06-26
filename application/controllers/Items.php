@@ -71,22 +71,68 @@ class Items extends CI_Controller
     // fungsi edit dan tambah data dalam 1 form
     public function process()
     {
+        $config['upload_path']   = './uploads/product/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']      = 2048;
+        $config['file_name']     = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        $this->load->library('upload', $config);
         $post = $this->input->post(null, TRUE);
         if (isset($_POST['add'])) {
             if ($this->items_m->check_barcode($post['barcode'])->num_rows() > 0) {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Barcode telah digunakan!</div>');
                 redirect('items/add');
             } else {
-                $this->items_m->add($post);
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item berhasil ditambah!</div>');
+                if (@$_FILES['image']['name'] != null) {
+                    if ($this->upload->do_upload('image')) {
+                        $post['image'] = $this->upload->data('file_name');
+                        $this->items_m->add($post);
+                        if ($this->db->affected_rows() > 0) {
+
+                            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item berhasil ditambah!</div>');
+                        }
+                        redirect('items');
+                    } else {
+                        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item gagal ditambah!</div>');
+                        redirect('items/add');
+                    }
+                } else {
+                    $post['image'] = null;
+                    $this->items_m->add($post);
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item berhasil ditambah!</div>');
+                    redirect('items');
+                }
             }
         } else if (isset($_POST['edit'])) {
             if ($this->items_m->check_barcode($post['barcode'], $post['id'])->num_rows() > 0) {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Barcode telah digunakan!</div>');
                 redirect('items/edit/' . $post['id']);
             } else {
-                $this->items_m->edit($post);
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item berhasil diubah!</div>');
+                if (@$_FILES['image']['name'] != null) {
+                    if ($this->upload->do_upload('image')) {
+                        $item = $this->items_m->get($post['id'])->row();
+                        if ($item->image != null) {
+                            $target_file = './uploads/product/' . $item->image;
+                            unlink($target_file);
+                        }
+                        $post['image'] = $this->upload->data('file_name');
+                        $this->items_m->edit($post);
+                        if ($this->db->affected_rows() > 0) {
+
+                            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item berhasil diubah!</div>');
+                        }
+                        redirect('items');
+                    } else {
+                        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item gagal ditambah!</div>');
+                        redirect('items/edit');
+                    }
+                } else {
+                    $post['image'] = null;
+                    $this->items_m->edit($post);
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item berhasil diubah!</div>');
+                    redirect('items');
+                }
+                // $this->items_m->edit($post);
+                // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">item berhasil diubah!</div>');
             }
         }
 

@@ -13,6 +13,7 @@
 		</div> -->
 		<ol class="breadcrumb">
 			<li><a href=""> <i class="mdi mdi-home text-muted hover-cursor"></i> </a></li>
-			<li><a href=""> <i></i><span class="text-muted mb-0 hover-cursor"> / Create</span></a></li>
+			<li><a href=""> <i></i><span class="text-muted mb-0 hover-cursor"><b>/ Create</b> </span></a></li>
 		</ol>
+
 	</div>
